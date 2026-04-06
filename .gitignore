@@ -1,5 +1,6 @@
-venv/
 data/
-__pycache__/
+*.rar
+*.zip
+venv/
 .ipynb_checkpoints/
-data.rar/
+__pycache__/
