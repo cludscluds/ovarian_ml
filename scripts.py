@@ -24,7 +24,7 @@ train_ds = OvarianDataset(
 )
 train_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True)
 
-print(f"Запуск на {DEVICE}. Найдено снимков: {len(train_ds)}")
+print(f"{DEVICE}. найдено снимков: {len(train_ds)}")
 
 # 3. Цикл обучения
 for epoch in range(EPOCHS):
@@ -40,9 +40,9 @@ for epoch in range(EPOCHS):
         optimizer.step()
         epoch_loss += loss.item()
         
-    print(f"Эпоха {epoch+1}/{EPOCHS}, Loss: {epoch_loss/len(train_loader):.4f}")
+    print(f"эпоха {epoch+1}/{EPOCHS}, Loss: {epoch_loss/len(train_loader):.4f}")
 
 # 4. Сохранение
     if not os.path.exists('models'): os.makedirs('models')
     torch.save(model.state_dict(), "models/best_model.pth")
-    print("Готово! Модель сохранена в models/best_model.pth")
+    print("модель сохранена в models/best_model.pth")
